@@ -1,0 +1,27 @@
+---
+# tasks file for bastion-ssh-config-target-host
+- name: Assert ProxyCommand Attributes
+  assert:
+    that:
+      - bastion_host_name is defined
+      - bastion_host_ip is defined
+      - bastion_host_user is defined
+      - bastion_host_private_key is defined
+    msg: Missing attributes required to set ProxyCommand
+
+- name: Update SSH Config with Bastion Configuration
+  blockinfile:
+    path: ~/.ssh/config
+    create: yes
+    backup: yes
+    mode: 0400
+    block: |
+      Host {{ bastion_host_name }}
+        Hostname {{ bastion_host_ip }}
+        User {{ bastion_host_user }}
+        IdentityFile "{{ bastion_host_private_key | default('~/.ssh/id_rsa') }}"
+        ControlMaster auto
+        ControlPath ~/.ssh/ansible-%r@%h:%p
+        ControlPersist 5m
+
+
