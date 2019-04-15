@@ -1,7 +1,6 @@
-Role Name
-=========
+# SSH Config of Bastion Host
 
-A brief description of the role goes here.
+This playbook is used to configure a Bastion host server in the `.ssh/config` file.
 
 Requirements
 ------------
@@ -30,9 +29,9 @@ Including an example of how to use your role (for instance, with variables passe
 License
 -------
 
-BSD
+Apache 2.0
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Carlos Frias
