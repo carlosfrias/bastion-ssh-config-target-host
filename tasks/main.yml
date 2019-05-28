@@ -14,7 +14,7 @@
     path: ~/.ssh/config
     create: yes
     backup: yes
-    mode: 0400
+    mode: 0600
     block: |
       Host {{ bastion_host_name }}
         Hostname {{ bastion_host_ip }}
