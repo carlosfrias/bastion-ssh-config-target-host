@@ -15,7 +15,7 @@
     create: yes
     backup: yes
     mode: 0600
-    marker: "BASTION_CONFIG"
+    marker: "# BASTION_CONFIG"
     block: |
       Host {{ bastion_host_name }}
         Hostname {{ bastion_host_ip }}
