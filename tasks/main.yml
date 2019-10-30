@@ -15,7 +15,9 @@
     create: yes
     backup: yes
     mode: 0600
-    marker: "# BASTION_CONFIG"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK"
+    marker_begin: "BASTION_CONFIG_BEGIN"
+    marker_end: "BASTION_CONFIG_END"
     block: |
       Host {{ bastion_host_name }}
         Hostname {{ bastion_host_ip }}
