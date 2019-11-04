@@ -1,2 +1,4 @@
 ---
 # defaults file for bastion-ssh-config-target-host
+marker_begin: "BASTION_CONFIG_BEGIN"
+marker_end: "BASTION_CONFIG_END"

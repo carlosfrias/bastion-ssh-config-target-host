@@ -16,8 +16,8 @@
     backup: yes
     mode: 0600
     marker: "# {mark} ANSIBLE MANAGED BLOCK"
-    marker_begin: "BASTION_CONFIG_BEGIN"
-    marker_end: "BASTION_CONFIG_END"
+    marker_begin: "{{ barker_begin }}"
+    marker_end: "{{ marker_end }}"
     block: |
       Host {{ bastion_host_name }}
         Hostname {{ bastion_host_ip }}
@@ -26,5 +26,3 @@
         ControlMaster auto
         ControlPath ~/.ssh/ansible-%r@%h:%p
         ControlPersist 5m
-
-
