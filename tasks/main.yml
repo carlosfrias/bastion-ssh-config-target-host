@@ -16,7 +16,7 @@
     backup: yes
     mode: 0600
     marker: "# {mark} ANSIBLE MANAGED BLOCK"
-    marker_begin: "{{ barker_begin }}"
+    marker_begin: "{{ marker_begin }}"
     marker_end: "{{ marker_end }}"
     block: |
       Host {{ bastion_host_name }}
